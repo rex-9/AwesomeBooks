@@ -81,44 +81,44 @@ for (let i = 0; i < books.length; i += 1) {
 
 function displayListPage() {
   const listPage = document.getElementById('list');
-  listPage.classList.remove('none');
-  listPage.classList.add('flex');
+  listPage.classList.remove('-z-1');
+  listPage.classList.add('z-1');
 
   const addPage = document.getElementById('add');
-  addPage.classList.remove('flex', 'justify-center');
-  addPage.classList.add('none');
+  addPage.classList.remove('z-1');
+  addPage.classList.add('-z-1');
 
   const contactPage = document.getElementById('contact');
-  contactPage.classList.remove('flex', 'justify-center');
-  contactPage.classList.add('none');
+  contactPage.classList.remove('z-1');
+  contactPage.classList.add('-z-1');
 }
 
 function displayAddPage() {
-  const newPage = document.getElementById('add');
-  newPage.classList.remove('none');
-  newPage.classList.add('flex', 'justify-center');
+  const addPage = document.getElementById('add');
+  addPage.classList.remove('-z-1');
+  addPage.classList.add('z-1');
 
   const listPage = document.getElementById('list');
-  listPage.classList.remove('flex');
-  listPage.classList.add('none');
+  listPage.classList.remove('z-1');
+  listPage.classList.add('-z-1');
 
   const contactPage = document.getElementById('contact');
-  contactPage.classList.remove('flex', 'justify-center');
-  contactPage.classList.add('none');
+  contactPage.classList.remove('z-1');
+  contactPage.classList.add('-z-1');
 }
 
 function displayContactPage() {
   const contactPage = document.getElementById('contact');
-  contactPage.classList.remove('none');
-  contactPage.classList.add('flex', 'justify-center');
+  contactPage.classList.remove('-z-1');
+  contactPage.classList.add('z-1');
 
   const listPage = document.getElementById('list');
-  listPage.classList.remove('flex');
-  listPage.classList.add('none');
+  listPage.classList.remove('z-1');
+  listPage.classList.add('-z-1');
 
-  const newPage = document.getElementById('add');
-  newPage.classList.remove('flex', 'justify-center');
-  newPage.classList.add('none');
+  const addPage = document.getElementById('add');
+  addPage.classList.remove('z-1');
+  addPage.classList.add('-z-1');
 }
 
 const listNav = document.getElementById('listNav');
