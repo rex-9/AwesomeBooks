@@ -5,10 +5,6 @@ class Book {
     this.title = title;
     this.author = author;
   }
-
-  displayInfo() {
-    return `${this.title} is written by${this.author}.`;
-  }
 }
 class Books {
   constructor() {
@@ -31,10 +27,6 @@ class Books {
     this.books = JSON.parse(localStorage.getItem('books'));
     this.books.splice(index, 1);
     localStorage.setItem('books', JSON.stringify(this.books));
-  }
-
-  get allBooks() {
-    return this.books;
   }
 }
 
@@ -63,9 +55,8 @@ function removeBook(e) {
 submit.addEventListener('click', newBook, false);
 
 for (let i = 0; i < books.length; i += 1) {
-  const book = document.createElement('li');
+  const book = document.createElement('tr');
   book.classList.add('book');
-
   const labelElement = document.createElement('p');
   labelElement.innerHTML = `"${books[i].title}" by ${books[i].author}`;
 
