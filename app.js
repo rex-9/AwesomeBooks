@@ -34,7 +34,7 @@ function removeItem(e) {
     book.removeChild(book.firstChild);
   }
   const index = books.indexOf();
-  books.splice(index, 1); // 2nd parameter means remove one item only
+  books.splice(index, 1);
   localStorage.setItem('books', JSON.stringify(books));
 }
 
