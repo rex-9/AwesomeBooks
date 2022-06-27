@@ -38,6 +38,7 @@ function removeItem(e) {
 submit.addEventListener("click", addItem, false);
 
 if (!localStorage.getItem('books')) {
+    books = [];
     localStorage.setItem('books', JSON.stringify(books));
 }
 
