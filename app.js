@@ -1,62 +1,72 @@
-let bookObj = {
-    title: '',
-    author: ''
-};
-
-var list = document.getElementById("list");
-var title = document.getElementById("title");
-var author = document.getElementById("author");
-var submit = document.getElementById("btn");
-
-function addItem(e) {
-    const books = JSON.parse(localStorage.getItem('books'));
-    bookObj = {
-        title: title.value,
-        author: author.value
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
     }
-    books.push(bookObj);
-    localStorage.setItem('books', JSON.stringify(books));
-    console.log(books);
-    window.setTimeout(function () {
-        window.location.reload();
-    }, 500);
-}
-
-function removeItem(e) {
-    var elElement = e.currentTarget;
-    var book = elElement.parentElement;
-    while (book.firstChild) {
-        book.removeChild(book.firstChild);
+    displayInfo() {
+        console.log(this.title + " is written by" + this.author + ".");
     }
-    const index = books.indexOf(i);
-    console.log(e);
-    books.splice(index, 1); // 2nd parameter means remove one item only
-    localStorage.setItem('books', JSON.stringify(books));
-    console.log(books);
+}
+class Books {
+    constructor() {
+        this.books = []
+    }
+
+    addBook(title, author) {
+        let book = new Book(title, author)
+        let storedBooks = JSON.parse(localStorage.getItem('books'))
+        if (storedBooks == null) {
+            this.books = []
+        } else {
+            this.books = JSON.parse(localStorage.getItem('books'))
+        }
+        this.books.push(book)
+        localStorage.setItem('books', JSON.stringify(this.books))
+    }
+
+    removeBook() {
+        const index = books.indexOf();
+        books.splice(index, 1);
+        localStorage.setItem('books', JSON.stringify(books));
+    }
+
+    get allBooks() {
+        return this.books
+    }
 }
 
-submit.addEventListener("click", addItem, false);
-
-if (!localStorage.getItem('books')) {
-    let books = [];
-    localStorage.setItem('books', JSON.stringify(books));
+function newBook() {
+    let league = new Books()
+    league.addBook(title.value, author.value)
+    window.location.reload();
 }
 
-const books = JSON.parse(localStorage.getItem('books'));
-for (let i = 0; i < books.length; i++) {
-    var book = document.createElement("li");
+let books = JSON.parse(localStorage.getItem('books'));
+if (books == null) {
+    books = []
+}
 
-    var titleElement = document.createElement("p");
+const list = document.getElementById('list');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const submit = document.getElementById('btn');
+
+submit.addEventListener('click', newBook, false);
+
+for (let i = 0; i < books.length; i += 1) {
+    const book = document.createElement('li');
+
+    const titleElement = document.createElement('p');
     titleElement.innerHTML = books[i].title;
 
-    var authorElement = document.createElement("p");
+    const authorElement = document.createElement('p');
     authorElement.innerHTML = books[i].author;
 
-    var remove = document.createElement("button");
-    remove.innerHTML = "Remove";
-    remove.addEventListener("click", removeItem.bind(i), false);
+    const remove = document.createElement('button');
+    remove.innerHTML = 'Remove';
+    // remove.addEventListener('click', removeBook, false);
 
-    var divider = document.createElement("div");
+    const divider = document.createElement('div');
     divider.classList.add('divider');
 
     book.appendChild(titleElement);
@@ -65,4 +75,5 @@ for (let i = 0; i < books.length; i++) {
     book.appendChild(divider);
     list.appendChild(book);
 }
-console.log(books);
+
+// window.localStorage.clear()
