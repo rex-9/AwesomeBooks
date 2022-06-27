@@ -43,7 +43,7 @@ if (books == null) {
   books = [];
 }
 
-const list = document.getElementById('list');
+const list = document.getElementById('bookList');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const submit = document.getElementById('btn');
@@ -64,7 +64,7 @@ submit.addEventListener('click', newBook, false);
 
 for (let i = 0; i < books.length; i += 1) {
   const book = document.createElement('li');
-  book.classList.add('book');
+  book.classList.add('book', 'flex');
 
   const labelElement = document.createElement('p');
   labelElement.innerHTML = `"${books[i].title}" by ${books[i].author}`;

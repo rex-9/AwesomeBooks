@@ -1,24 +1,53 @@
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
 body {
   font-family: 'Quicksand', sans-serif;
 }
 
-#display {
-  display: flex;
+#list {
   justify-content: center;
   height: auto;
   text-align: center;
 }
 
-#display div {
+#list div,
+#add div {
   width: 500px;
 }
 
-#add {
-  text-align: center;
+#list,
+#add,
+#contact {
+  height: 78vh;
 }
 
 .book {
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -27,12 +56,23 @@ h1 {
   font-weight: 900;
 }
 
-li {
+nav ul {
+  width: 500px;
+}
+
+nav li,
+#list li {
   list-style-type: none;
-  margin: 20px 0 0 -40px;
+  margin-left: -40px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer
 }
 
 input {
+  width: 300px;
   margin: 10px 0 10px 0;
   padding: 10px;
   border-radius: 5px;
@@ -44,9 +84,26 @@ button {
   cursor: pointer;
 }
 
+footer {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 20px 0 20px 0;
+}
+
+nav {
+  padding: 0px 10% 0px 10%;
+}
+
 .divider {
   border-top: 1px solid gray;
   border-radius: 5px;
   width: 200px;
+  margin: 20px 0 20px 0;
+}
+
+.stick {
+  border-right: 2px solid black;
+  border-radius: 5px;
+  height: 30px;
   margin: 20px 0 20px 0;
 }

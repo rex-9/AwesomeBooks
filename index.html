@@ -11,21 +11,50 @@
 </head>
 
 <body>
-    <section id="display">
+    <nav class="flex justify-between items-center">
+        <h1>Awesome Books</h1>
+        <ul class="flex justify-around items-center">
+            <li id="listNav"><a>List</a></li>
+            <div class="stick"></div>
+            <li id="newNav"><a>Add new</a></li>
+            <div class="stick"></div>
+            <li id="contactNav"><a>Contact</a></li>
+        </ul>
+    </nav>
+    <section id="list" class="flex items-center">
         <div>
-            <h1>Awesome books</h1>
-            <ul id="list">
+            <h1>All Awesome books</h1>
+            <ul id="bookList">
             </ul>
             <div class="divider"></div>
         </div>
     </section>
 
-    <section id="add">
-        <h1>Add a new book</h1>
-        <input type="text" name="title" placeholder="Title" id="title" /><br>
-        <input type="text" name="author" placeholder="Author" id="author" /><br>
-        <button type="submit" id="btn">Add</button>
+    <section id="add" class="flex justify-center text-center items-center">
+        <div>
+            <h1>Add a new book</h1>
+            <input type="text" name="title" placeholder="Title" id="title" /><br>
+            <input type="text" name="author" placeholder="Author" id="author" /><br>
+            <button type="submit" id="btn">Add</button>
+            <div class="divider"></div>
+        </div>
     </section>
+
+    <section id="contact" class="flex justify-center items-center">
+        <div>
+            <h1>Contact information</h1>
+            <p>Do you have any questions?</p>
+            <ul>
+                <li>Our email</li>
+                <li>Our phone number</li>
+                <li>Our address</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        Copyright..
+    </footer>
 
 </body>
 
