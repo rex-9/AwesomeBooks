@@ -71,7 +71,7 @@ for (let i = 0; i < collection.books.length; i += 1) {
     book.classList.add('book', 'flex');
 
     const labelElement = document.createElement('p');
-    labelElement.innerHTML = `"${books[i].title}" by ${books[i].author}`;
+    labelElement.innerHTML = `"${collection.books[i].title}" by ${collection.books[i].author}`;
 
     const remove = document.createElement('button');
     remove.innerHTML = 'Remove';
