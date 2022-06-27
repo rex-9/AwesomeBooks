@@ -1,68 +1,64 @@
 let bookObj = {
-    title: '',
-    author: ''
+  title: '',
+  author: '',
 };
 
-var list = document.getElementById("list");
-var title = document.getElementById("title");
-var author = document.getElementById("author");
-var submit = document.getElementById("btn");
+const books = JSON.parse(localStorage.getItem('books'));
+const list = document.getElementById('list');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const submit = document.getElementById('btn');
 
-function addItem(e) {
-    const books = JSON.parse(localStorage.getItem('books'));
-    bookObj = {
-        title: title.value,
-        author: author.value
-    }
-    books.push(bookObj);
-    localStorage.setItem('books', JSON.stringify(books));
-    console.log(books);
-    window.setTimeout(function () {
-        window.location.reload();
-    }, 500);
+function addItem() {
+  const books = JSON.parse(localStorage.getItem('books'));
+  bookObj = {
+    title: title.value,
+    author: author.value,
+  };
+  books.push(bookObj);
+  localStorage.setItem('books', JSON.stringify(books));
+  window.setTimeout(() => {
+    window.location.reload();
+  }, 500);
+}
+
+if (!localStorage.getItem('books')) {
+  const books = [];
+  localStorage.setItem('books', JSON.stringify(books));
 }
 
 function removeItem(e) {
-    var elElement = e.currentTarget;
-    var book = elElement.parentElement;
-    while (book.firstChild) {
-        book.removeChild(book.firstChild);
-    }
-    const index = books.indexOf(i);
-    console.log(e);
-    books.splice(index, 1); // 2nd parameter means remove one item only
-    localStorage.setItem('books', JSON.stringify(books));
-    console.log(books);
+  const elElement = e.currentTarget;
+  const book = elElement.parentElement;
+  while (book.firstChild) {
+    book.removeChild(book.firstChild);
+  }
+  const index = books.indexOf();
+  books.splice(index, 1); // 2nd parameter means remove one item only
+  localStorage.setItem('books', JSON.stringify(books));
 }
 
-submit.addEventListener("click", addItem, false);
+submit.addEventListener('click', addItem, false);
 
-if (!localStorage.getItem('books')) {
-    books = [];
-    localStorage.setItem('books', JSON.stringify(books));
+for (let i = 0; i < books.length; i += 1) {
+  const book = document.createElement('li');
+
+  const titleElement = document.createElement('p');
+  titleElement.innerHTML = books[i].title;
+
+  const authorElement = document.createElement('p');
+  authorElement.innerHTML = books[i].author;
+
+  const remove = document.createElement('button');
+  remove.innerHTML = 'Remove';
+  remove.addEventListener('click', removeItem.bind(i), false);
+
+  const divider = document.createElement('div');
+  divider.classList.add('divider');
+
+  book.appendChild(titleElement);
+  book.appendChild(authorElement);
+  book.appendChild(remove);
+  book.appendChild(divider);
+  list.appendChild(book);
 }
-
-const books = JSON.parse(localStorage.getItem('books'));
-for (let i = 0; i < books.length; i++) {
-    var book = document.createElement("li");
-
-    var titleElement = document.createElement("p");
-    titleElement.innerHTML = books[i].title;
-
-    var authorElement = document.createElement("p");
-    authorElement.innerHTML = books[i].author;
-
-    var remove = document.createElement("button");
-    remove.innerHTML = "Remove";
-    remove.addEventListener("click", removeItem.bind(i), false);
-
-    var divider = document.createElement("div");
-    divider.classList.add('divider');
-
-    book.appendChild(titleElement);
-    book.appendChild(authorElement);
-    book.appendChild(remove);
-    book.appendChild(divider);
-    list.appendChild(book);
-}
-console.log(books);
