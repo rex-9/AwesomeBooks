@@ -64,7 +64,7 @@ submit.addEventListener('click', newBook, false);
 
 for (let i = 0; i < books.length; i += 1) {
   const book = document.createElement('li');
-  book.classList.add('book')
+  book.classList.add('book');
 
   const labelElement = document.createElement('p');
   labelElement.innerHTML = `"${books[i].title}" by ${books[i].author}`;
