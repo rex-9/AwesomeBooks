@@ -1,23 +1,52 @@
-#paper {
-  width: 300px;
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#display {
+  display: flex;
+  justify-content: center;
   height: auto;
-  margin: 20px auto;
-  clear: both;
+  text-align: center;
+}
+
+#display div {
+  width: 500px;
+}
+
+#add {
+  text-align: center;
 }
 
 .book {
-  text-align: center;
-  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-weight: 900;
 }
 
 li {
   list-style-type: none;
-  margin-left: -40px;
+  margin: 20px 0px 0px -40px;
+}
+
+input {
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button {
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .divider {
   border-top: 1px solid gray;
   border-radius: 5px;
-  width: 100%;
+  width: 200px;
   margin: 20px 0 20px 0;
 }
