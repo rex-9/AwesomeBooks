@@ -1,6 +1,8 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
 # Project Name
 Awesome books
 
+![screenshot](screenshot.png)
 ## Built With
 - HTML
 - CSS
@@ -29,6 +31,7 @@ Here is the online version of [Awesome Books](https://htetnaing0814.github.io/aw
 
 ## Author
 👤 - Github: [@HtetNaing0814](https://github.com/HtetNaing0814)
+👤 - Github: [@Maria18000](https://github.com/Maria18000)
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!

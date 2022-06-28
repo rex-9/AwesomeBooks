@@ -39,7 +39,7 @@ if (books == null) {
   collection.books = books;
 }
 
-const list = document.getElementById('list');
+const bookList = document.getElementById('bookList');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const submit = document.getElementById('btn');
@@ -71,5 +71,40 @@ for (let i = 0; i < collection.books.length; i += 1) {
 
   book.appendChild(labelElement);
   book.appendChild(remove);
-  list.appendChild(book);
+  bookList.appendChild(book);
 }
+
+document.getElementById('listLink').style.color = 'blue';
+
+function displayListPage() {
+  document.getElementById('list').style.display = 'block';
+  document.getElementById('add').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('listLink').style.color = 'blue';
+  document.getElementById('addLink').style.color = 'black';
+  document.getElementById('contactLink').style.color = 'black';
+}
+
+function displayAddPage() {
+  document.getElementById('add').style.display = 'block';
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('addLink').style.color = 'blue';
+  document.getElementById('contactLink').style.color = 'black';
+  document.getElementById('listLink').style.color = 'black';
+}
+
+function displayContactPage() {
+  document.getElementById('contact').style.display = 'block';
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('add').style.display = 'none';
+  document.getElementById('contactLink').style.color = 'blue';
+  document.getElementById('addLink').style.color = 'black';
+  document.getElementById('listLink').style.color = 'black';
+}
+
+document.getElementById('listNav').addEventListener('click', displayListPage, false);
+
+document.getElementById('addNav').addEventListener('click', displayAddPage, false);
+
+document.getElementById('contactNav').addEventListener('click', displayContactPage, false);
