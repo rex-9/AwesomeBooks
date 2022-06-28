@@ -6,55 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
 </head>
 
 <body>
-    <nav class="flex justify-between items-center">
+    <nav class="navbar">
         <h1>Awesome Books</h1>
-        <ul class="flex justify-around items-center">
-            <li id="listNav"><a>List</a></li>
-            <li id="addNav"><a>Add new</a></li>
-            <li id="contactNav"><a>Contact</a></li>
+        <ul class="menu">
+            <li id="listNav"><a id="listLink">List</a></li>
+            <div class="stick"></div>
+            <li id="addNav"><a id="addLink">Add new</a></li>
+            <div class="stick"></div>
+            <li id="contactNav"><a id="contactLink">Contact</a></li>
         </ul>
     </nav>
-
-    <section id="add" class="flex justify-center text-center items-center">
+    <p id="date">June 28th 2022, 6:27:30 pm</p>
+    <section id="list">
         <div>
-            <h1>Add a new book</h1>
-            <input type="text" name="title" placeholder="Title" id="title" /><br>
-            <input type="text" name="author" placeholder="Author" id="author" /><br>
-            <button type="submit" id="btn">Add</button>
-            <div class="divider"></div>
+            <h1>All awesome books</h1>
+            <table class="table table-striped">
+                <tbody id="bookList"></tbody>
+            </table>
         </div>
     </section>
 
-    <section id="contact" class="flex justify-center items-center">
+    <section id="add">
+        <div>
+            <h1>Add a new book</h1>
+            <input type="text" name="title" placeholder="Title" id="title"/><br>
+            <input type="text" name="author" placeholder="Author" id="author"/><br>
+            <button type="submit" id="btn">Add</button>
+        </div>
+    </section>
+
+    <section id="contact">
         <div>
             <h1>Contact information</h1>
             <p>Do you have any questions?</p>
             <ul>
-                <li>Our email</li>
-                <li>Our phone number</li>
-                <li>Our address</li>
+                <li>Our email is example@gmail.com</li>
+                <li>Our phone number 090078601</li>
+                <li>Our address: Suite #67, street #7, F-6/2, Islamabad</li>
             </ul>
         </div>
     </section>
 
-    <section id="list" class="flex items-center">
-        <div>
-            <h1>All Awesome books</h1>
-            <ul id="bookList">
-            </ul>
-            <div class="divider"></div>
-        </div>
-    </section>
-
-    <footer class="flex justify-center">
-        <p>
-            Copyright..
-        </p>
+    <footer class="text-center">
+        Copyright..
     </footer>
 
 </body>

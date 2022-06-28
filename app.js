@@ -5,10 +5,6 @@ class Book {
     this.title = title;
     this.author = author;
   }
-
-  displayInfo() {
-    return `${this.title} is written by${this.author}.`;
-  }
 }
 class Books {
   constructor() {
@@ -32,19 +28,11 @@ class Books {
     this.books.splice(index, 1);
     localStorage.setItem('books', JSON.stringify(this.books));
   }
-
-  get allBooks() {
-    return this.books;
-  }
 }
 
-const collection = new Books();
-
-const books = JSON.parse(localStorage.getItem('books'));
+let books = JSON.parse(localStorage.getItem('books'));
 if (books == null) {
-  collection.books = [];
-} else {
-  collection.books = books;
+  books = [];
 }
 
 const bookList = document.getElementById('bookList');
@@ -66,12 +54,11 @@ function removeBook(e) {
 
 submit.addEventListener('click', newBook, false);
 
-for (let i = 0; i < collection.books.length; i += 1) {
-  const book = document.createElement('li');
-  book.classList.add('book', 'flex');
-
+for (let i = 0; i < books.length; i += 1) {
+  const book = document.createElement('tr');
+  book.classList.add('book');
   const labelElement = document.createElement('p');
-  labelElement.innerHTML = `"${collection.books[i].title}" by ${collection.books[i].author}`;
+  labelElement.innerHTML = `"${books[i].title}" by ${books[i].author}`;
 
   const remove = document.createElement('button');
   remove.innerHTML = 'Remove';
@@ -83,53 +70,31 @@ for (let i = 0; i < collection.books.length; i += 1) {
   bookList.appendChild(book);
 }
 
-function displayListPage() {
-  const listPage = document.getElementById('list');
-  listPage.classList.remove('-z-1');
-  listPage.classList.add('z-1');
+document.getElementById('listLink').style.color = 'blue';
 
-  const addPage = document.getElementById('add');
-  addPage.classList.remove('z-1');
-  addPage.classList.add('-z-1');
+document.getElementById('listNav').onclick = function () {
+  document.getElementById('list').style.display = 'block';
+  document.getElementById('add').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('listLink').style.color = 'blue';
+  document.getElementById('addLink').style.color = 'black';
+  document.getElementById('contactLink').style.color = 'black';
+};
 
-  const contactPage = document.getElementById('contact');
-  contactPage.classList.remove('z-1');
-  contactPage.classList.add('-z-1');
-}
+document.getElementById('addNav').onclick = function () {
+  document.getElementById('add').style.display = 'block';
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('addLink').style.color = 'blue';
+  document.getElementById('contactLink').style.color = 'black';
+  document.getElementById('listLink').style.color = 'black';
+};
 
-function displayAddPage() {
-  const addPage = document.getElementById('add');
-  addPage.classList.remove('-z-1');
-  addPage.classList.add('z-1');
-
-  const listPage = document.getElementById('list');
-  listPage.classList.remove('z-1');
-  listPage.classList.add('-z-1');
-
-  const contactPage = document.getElementById('contact');
-  contactPage.classList.remove('z-1');
-  contactPage.classList.add('-z-1');
-}
-
-function displayContactPage() {
-  const contactPage = document.getElementById('contact');
-  contactPage.classList.remove('-z-1');
-  contactPage.classList.add('z-1');
-
-  const listPage = document.getElementById('list');
-  listPage.classList.remove('z-1');
-  listPage.classList.add('-z-1');
-
-  const addPage = document.getElementById('add');
-  addPage.classList.remove('z-1');
-  addPage.classList.add('-z-1');
-}
-
-const listNav = document.getElementById('listNav');
-listNav.addEventListener('click', displayListPage, false);
-
-const addNav = document.getElementById('addNav');
-addNav.addEventListener('click', displayAddPage, false);
-
-const contactNav = document.getElementById('contactNav');
-contactNav.addEventListener('click', displayContactPage, false);
+document.getElementById('contactNav').onclick = function () {
+  document.getElementById('contact').style.display = 'block';
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('add').style.display = 'none';
+  document.getElementById('contactLink').style.color = 'blue';
+  document.getElementById('addLink').style.color = 'black';
+  document.getElementById('listLink').style.color = 'black';
+};
