@@ -30,9 +30,13 @@ class Books {
   }
 }
 
-let books = JSON.parse(localStorage.getItem('books'));
+const collection = new Books();
+
+const books = JSON.parse(localStorage.getItem('books'));
 if (books == null) {
-  books = [];
+  collection.books = [];
+} else {
+  collection.books = books;
 }
 
 const bookList = document.getElementById('bookList');
@@ -54,11 +58,11 @@ function removeBook(e) {
 
 submit.addEventListener('click', newBook, false);
 
-for (let i = 0; i < books.length; i += 1) {
+for (let i = 0; i < collection.books.length; i += 1) {
   const book = document.createElement('tr');
   book.classList.add('book');
   const labelElement = document.createElement('p');
-  labelElement.innerHTML = `"${books[i].title}" by ${books[i].author}`;
+  labelElement.innerHTML = `"${collection.books[i].title}" by ${collection.books[i].author}`;
 
   const remove = document.createElement('button');
   remove.innerHTML = 'Remove';

@@ -27,6 +27,10 @@ body {
   align-items: center;
 }
 
+#add div {
+  width: 300px;
+}
+
 .book {
   width: 100%;
   display: flex;
