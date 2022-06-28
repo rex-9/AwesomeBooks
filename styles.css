@@ -14,9 +14,10 @@ body {
   padding-top: 5%;
 }
 
-hr {
-  width: 50%;
-  border: 1px solid black;
+#listLink,
+#addLink {
+  border-right: 2px solid black;
+  padding-right: 30px;
 }
 
 #contact div {
@@ -98,13 +99,6 @@ button {
 .menu li:hover {
   cursor: pointer;
   color: blue;
-}
-
-.stick {
-  border-right: 2px solid black;
-  border-radius: 5px;
-  height: 25px;
-  margin: 25px 15px 0 0;
 }
 
 footer {
