@@ -1,5 +1,5 @@
-import { newBook, createElements } from './modules/elements'
-import { displayListPage, displayAddPage, displayContactPage } from './modules/display'
+import { newBook, createElements } from './modules/elements.js';
+import { displayListPage, displayAddPage, displayContactPage } from './modules/display.js';
 
 createElements();
 
