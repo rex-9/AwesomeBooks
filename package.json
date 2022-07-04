@@ -1,4 +1,22 @@
 {
+  "name": "awesome-books",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)\r # Project Name\r Awesome books",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HtetNaing0814/awesome-books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HtetNaing0814/awesome-books/issues"
+  },
+  "homepage": "https://github.com/HtetNaing0814/awesome-books#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
