@@ -1,7 +1,10 @@
 import { newBook, createElements } from './modules/elements.js';
 import { displayListPage, displayAddPage, displayContactPage } from './modules/display.js';
+import * as dateTime from './modules/dateTime.js';
 
 createElements();
+
+document.getElementById('date').innerHTML = `${dateTime.date} ${dateTime.hour}:${dateTime.min}:${dateTime.sec}`;
 
 document.getElementById('btn').addEventListener('click', newBook, false);
 
