@@ -1,8 +1,9 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-# Project Name
-Awesome books
+# Awesome books
 
-![screenshot](./AwesomeBooks.png)
+## Screenshot
+
+![Awesome Books](./AwesomeBooks.png)
+
 ## Built With
 - HTML
 - CSS
