@@ -2,9 +2,9 @@
 
 ## Screenshot
 
-![Awesome Books](./AwesomeBooks.png)
-
+![AwesomeBooks](./assets/AwesomeBooks.png)
 ## Built With
+
 - HTML
 - CSS
 - JS
@@ -19,7 +19,7 @@ To get a local copy up and running:
 
 1. Clone this repository or download the zip folder:
 
-**``git clone https://github.com/rex-9/awesomebooks.git``**
+**``git clone https://github.com/rex-9/AwesomeBooks.git``**
 
 2. Navigate to the location of the folder in your machine:
 
