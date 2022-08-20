@@ -1,17 +1,30 @@
-import { newBook, createElements } from './modules/elements.js';
+import { checkBooks, validation, createElements } from './modules/elements.js';
 import { displayListPage, displayAddPage, displayContactPage } from './modules/display.js';
 import * as dateTime from './modules/dateTime.js';
 
 createElements();
 
-document.getElementById('date').innerHTML = `${dateTime.date} ${dateTime.hour}:${dateTime.min}:${dateTime.sec}`;
+const date = document.getElementById('date');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const add = document.getElementById('btn');
+const listLink = document.getElementById('listLink');
+const listNav = document.getElementById('listNav');
+const addNav = document.getElementById('addNav');
+const contactNav = document.getElementById('contactNav');
 
-document.getElementById('btn').addEventListener('click', newBook, false);
+checkBooks();
 
-document.getElementById('listLink').style.color = 'blue';
+date.innerHTML = `${dateTime.date} ${dateTime.hour}:${dateTime.min}:${dateTime.sec}`;
 
-document.getElementById('listNav').addEventListener('click', displayListPage, false);
+listLink.style.color = 'blue';
 
-document.getElementById('addNav').addEventListener('click', displayAddPage, false);
+listNav.addEventListener('click', displayListPage, false);
 
-document.getElementById('contactNav').addEventListener('click', displayContactPage, false);
+addNav.addEventListener('click', displayAddPage, false);
+
+contactNav.addEventListener('click', displayContactPage, false);
+
+validation(title, 'keypress');
+validation(author, 'keypress');
+validation(add, 'click');

@@ -1,8 +1,19 @@
 import Books from './books.js';
 
+const list = document.getElementById('list');
 const bookList = document.getElementById('bookList');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
+
+const checkBooks = () => {
+  if (!bookList.hasChildNodes()) {
+    const boiler = document.createElement('p');
+    boiler.id = 'boiler';
+    boiler.style.cssText = 'color: green; text-align: center;';
+    boiler.innerHTML = 'The new beginning of AwesomeBooks. <br>Let&apos; add new awesome books.😎';
+    list.appendChild(boiler);
+  }
+};
 
 const newBook = () => {
   const league = new Books();
@@ -43,7 +54,45 @@ const createElements = () => {
   }
 };
 
+const add = document.getElementById('add');
+
+const validation = (input, action) => {
+  input.addEventListener(action, (event) => {
+    if (action === 'keypress') {
+      if (event.key === 'Enter') {
+        if (title.value === '' || author.value === '') {
+          const preverror = document.getElementById('error');
+          if (!preverror) {
+            const error = document.createElement('p');
+            error.id = 'error';
+            error.innerHTML = 'Form should not be empty';
+            error.style.cssText = 'color: red;';
+            add.appendChild(error);
+          }
+        } else {
+          event.preventDefault();
+          newBook();
+        }
+      }
+    } else if (title.value === '' || author.value === '') {
+      const preverror = document.getElementById('error');
+      if (!preverror) {
+        const error = document.createElement('p');
+        error.id = 'error';
+        error.innerHTML = 'Form should not be empty';
+        error.style.cssText = 'color: red;';
+        add.appendChild(error);
+      }
+    } else {
+      event.preventDefault();
+      newBook();
+    }
+  });
+};
+
 export {
+  checkBooks,
   newBook,
   createElements,
+  validation,
 };
